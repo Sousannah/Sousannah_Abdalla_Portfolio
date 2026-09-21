@@ -15,6 +15,7 @@ import SkillsView from '../views/SkillsView.jsx';
 import ContactView from '../views/ContactView.jsx';
 
 import ResumeGate from '../components/ResumeGate.jsx';
+import WhatsAppButton from '../components/WhatsAppButton.jsx';
 import { useProfile } from '../lib/content.jsx';
 import { useTheme } from '../hooks/index.js';
 import { track, trackSection } from '../lib/tracker.js';
@@ -210,11 +211,14 @@ export default function Stage() {
 
       <ResumeGate open={resumeOpen} onClose={() => setResumeOpen(false)} />
 
+      {/* Present on every screen — the fastest way for a client to reach her. */}
+      <WhatsAppButton />
+
       {/* A quiet way in for the owner. */}
       {!section && (
         <Link
           to="/dashboard"
-          className="fixed bottom-3 right-4 z-40 text-[11.5px] text-ink-faint transition-colors
+          className="fixed bottom-3 left-4 z-40 text-[11.5px] text-ink-faint transition-colors
             hover:text-ink dark:hover:text-white"
           style={{ bottom: 'max(12px, env(safe-area-inset-bottom))' }}
         >

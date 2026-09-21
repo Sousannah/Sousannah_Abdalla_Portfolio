@@ -37,7 +37,7 @@ const TABS = [
 
 const BLANK_PROJECT = {
   name: '', category: '', year: '', tagline: '', description: '',
-  outcomes: [], stack: [], accent: 'blue', featured: false, kind: 'shipped',
+  outcomes: [], stack: [], accent: 'blue', featured: false,
   link: '', linkLabel: '', coverUrl: null, gallery: [], published: true,
 };
 
@@ -447,12 +447,6 @@ function ProjectForm({ item, patch }) {
       <div className="space-y-2 rounded-apple bg-black/[.03] p-4 dark:bg-white/[.04]">
         <Toggle label="Featured" hint="Featured projects ride the big carousel at the top."
           checked={item.featured} onChange={(v) => patch({ featured: v })} />
-        <Toggle
-          label="I can build this (not shipped yet)"
-          hint="Marks it as an offer rather than delivered work: the site labels the card, says so inside it, and the Work filters can hide it."
-          checked={item.kind === 'concept'}
-          onChange={(v) => patch({ kind: v ? 'concept' : 'shipped' })}
-        />
         <Toggle label="Published" hint="Turn off to hide it from the site without deleting it."
           checked={item.published} onChange={(v) => patch({ published: v })} />
       </div>

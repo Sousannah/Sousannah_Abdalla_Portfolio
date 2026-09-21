@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUpRight, Check, ChevronLeft, ChevronRight, Sparkles, X } from 'lucide-react';
+import { ArrowUpRight, Check, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useContent } from '../lib/content.jsx';
 import { Pill, accent } from '../components/ui/Primitives.jsx';
 import { useScrollLock } from '../hooks/index.js';
@@ -8,32 +8,12 @@ import { track } from '../lib/tracker.js';
 import { mediaUrl } from '../lib/api.js';
 
 /**
- * Categories read like "Applied AI · Automation" or "Concept · Voice AI". The
- * filter wants one word for the subject, and for a concept that is the part
- * after the marker — otherwise all six would collapse into "Concept", which the
- * kind filter already covers.
+ * Categories read like "Applied AI · Automation". The filter wants one word for
+ * the subject, which is the part before the separator.
  */
 function topicOf(category = '') {
-  const parts = category.split('·').map((part) => part.trim()).filter(Boolean);
-  return (parts[0] === 'Concept' ? parts[1] : parts[0]) || 'Other';
-}
-
-const KINDS = [
-  { id: 'all', label: 'Everything' },
-  { id: 'shipped', label: 'Shipped' },
-  { id: 'concept', label: 'Can build for you' },
-];
-
-/** A small marker so a concept is never mistaken for delivered work. */
-function ConceptTag({ className = '' }) {
-  return (
-    <span
-      className={`inline-flex items-center gap-1 rounded-pill bg-white/15 px-2 py-[3px]
-        text-[10.5px] font-semibold uppercase tracking-[.06em] text-white backdrop-blur-md ${className}`}
-    >
-      <Sparkles size={10} /> Can build
-    </span>
-  );
+  const [first] = category.split('·').map((part) => part.trim()).filter(Boolean);
+  return first || 'Other';
 }
 
 /** A tall card with the cover art bleeding to the edges, like an App Store tile. */
@@ -75,8 +55,6 @@ function ProjectCard({ project, onOpen, isFocused }) {
         </>
       )}
 
-      {project.kind === 'concept' && <ConceptTag className="absolute left-5 top-5" />}
-
       <div className="relative flex h-full flex-col justify-end p-6 text-white">
         <span className="text-[11.5px] font-semibold uppercase tracking-[.09em] text-white/70">
           {project.category}
@@ -102,7 +80,6 @@ function ProjectSheet({ project, onClose }) {
   if (!project) return null;
 
   const tone = accent(project.accent);
-  const isConcept = project.kind === 'concept';
 
   return (
     <motion.div
@@ -147,17 +124,6 @@ function ProjectSheet({ project, onClose }) {
           <h3 className="mt-3 text-title">{project.name}</h3>
           <p className="mt-2 text-lede text-ink-muted dark:text-white/55">{project.tagline}</p>
 
-          {isConcept && (
-            // Said plainly and above the fold: this one has not been built yet.
-            <div className="mt-6 flex gap-3 rounded-apple border border-accent/25 bg-accent/[.06] p-4">
-              <Sparkles size={17} className="mt-0.5 shrink-0 text-accent" />
-              <p className="text-[14px] leading-relaxed text-ink-soft dark:text-white/65">
-                This is something I can build for you, not something I have already delivered.
-                The screens are a design of the finished system — the engineering behind it comes
-                from the shipped work above.
-              </p>
-            </div>
-          )}
 
           {project.description && (
             <p className="mt-7 text-[16px] leading-[1.7] text-ink-soft dark:text-white/65">
@@ -182,7 +148,7 @@ function ProjectSheet({ project, onClose }) {
           {project.outcomes?.length > 0 && (
             <div className="mt-8">
               <h4 className="text-[13px] font-semibold uppercase tracking-[.08em] text-ink-faint">
-                {isConcept ? 'What it would do' : 'What it delivered'}
+                What it delivered
               </h4>
               <ul className="mt-4 space-y-2.5">
                 {project.outcomes.map((outcome) => (
@@ -198,7 +164,7 @@ function ProjectSheet({ project, onClose }) {
           {project.stack?.length > 0 && (
             <div className="mt-8">
               <h4 className="text-[13px] font-semibold uppercase tracking-[.08em] text-ink-faint">
-                {isConcept ? 'Built with' : 'Built with'}
+                Built with
               </h4>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
@@ -208,15 +174,7 @@ function ProjectSheet({ project, onClose }) {
             </div>
           )}
 
-          {isConcept ? (
-            <a
-              href="#contact"
-              onClick={() => track('concept_enquiry', { label: project.name, section: 'work' })}
-              className="btn-primary mt-9"
-            >
-              Talk to me about this <ArrowUpRight size={16} />
-            </a>
-          ) : project.link && (
+          {project.link && (
             <a
               href={project.link}
               target="_blank"
@@ -246,17 +204,9 @@ function ProjectTile({ project, onOpen, isFocused }) {
         dark:bg-white/[.035]
         ${isFocused ? 'border-accent/50' : 'hairline'}`}
     >
-      <div className="flex items-center gap-2">
-        <span className={`text-[11.5px] font-semibold uppercase tracking-[.08em] ${tone.text}`}>
-          {project.category}
-        </span>
-        {project.kind === 'concept' && (
-          <span className="rounded-pill bg-accent/10 px-2 py-[2px] text-[10px] font-semibold
-            uppercase tracking-[.06em] text-accent">
-            Can build
-          </span>
-        )}
-      </div>
+      <span className={`text-[11.5px] font-semibold uppercase tracking-[.08em] ${tone.text}`}>
+        {project.category}
+      </span>
       <h4 className="mt-2 text-[18px] font-semibold tracking-tight">{project.name}</h4>
       <p className="mt-1.5 line-clamp-2 text-[13.5px] text-ink-muted dark:text-white/55">
         {project.tagline}
@@ -273,7 +223,6 @@ function ProjectTile({ project, onOpen, isFocused }) {
 export default function WorkView({ focus }) {
   const { projects } = useContent();
   const [selected, setSelected] = useState(null);
-  const [kind, setKind] = useState('all');
   const [topic, setTopic] = useState('all');
   const railRef = useRef(null);
 
@@ -289,16 +238,13 @@ export default function WorkView({ focus }) {
   }, [projects]);
 
   const matches = useMemo(
-    () => projects.filter((project) => {
-      const projectKind = project.kind || 'shipped';
-      if (kind !== 'all' && projectKind !== kind) return false;
-      if (topic !== 'all' && topicOf(project.category) !== topic) return false;
-      return true;
-    }),
-    [projects, kind, topic],
+    () => (topic === 'all'
+      ? projects
+      : projects.filter((project) => topicOf(project.category) === topic)),
+    [projects, topic],
   );
 
-  const filtering = kind !== 'all' || topic !== 'all';
+  const filtering = topic !== 'all';
   const featured = matches.filter((project) => project.featured);
   const rest = matches.filter((project) => !project.featured);
 
@@ -311,7 +257,6 @@ export default function WorkView({ focus }) {
   // bring the card into view, then open it.
   useEffect(() => {
     if (!focusedId) return undefined;
-    setKind('all');
     setTopic('all');
     const timer = setTimeout(() => {
       const card = document.getElementById(`work-${focusedId}`);
@@ -348,22 +293,13 @@ export default function WorkView({ focus }) {
         <p className="eyebrow">Selected work</p>
         <h2 className="mt-3 text-headline gradient-text">Things I have shipped</h2>
         <p className="mx-auto mt-4 max-w-md text-[15.5px] text-ink-muted dark:text-white/55">
-          Production systems with real users, plus the research behind them — and a few things
-          I would happily build next.
+          Production systems with real users, plus the research behind them.
         </p>
       </header>
 
       {/* Filters */}
       <div className="mx-auto mb-8 max-w-5xl px-5 md:px-8">
-        <div className="flex flex-wrap justify-center gap-2">
-          {KINDS.map(({ id, label }) => (
-            <button key={id} onClick={() => choose(setKind, id, 'kind')} className={chip(kind === id)}>
-              {label}
-            </button>
-          ))}
-        </div>
-
-        <div className="no-scrollbar mt-3 flex justify-start gap-2 overflow-x-auto pb-1
+        <div className="no-scrollbar flex justify-start gap-2 overflow-x-auto pb-1
           md:flex-wrap md:justify-center md:overflow-visible">
           <button onClick={() => choose(setTopic, 'all', 'topic')} className={`shrink-0 ${chip(topic === 'all')}`}>
             All topics
@@ -382,12 +318,12 @@ export default function WorkView({ focus }) {
 
       {matches.length === 0 && (
         <p className="py-16 text-center text-[15px] text-ink-muted dark:text-white/55">
-          Nothing matches that combination.{' '}
+          Nothing in that topic yet.{' '}
           <button
-            onClick={() => { setKind('all'); setTopic('all'); }}
+            onClick={() => setTopic('all')}
             className="font-semibold text-accent underline-offset-4 hover:underline"
           >
-            Clear the filters
+            Show everything
           </button>
         </p>
       )}

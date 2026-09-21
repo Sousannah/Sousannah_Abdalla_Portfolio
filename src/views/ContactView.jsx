@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { AlertCircle, Check, Copy, Linkedin, Loader2, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react';
+import { AlertCircle, Check, Copy, Linkedin, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useProfile } from '../lib/content.jsx';
 import api, { ApiError } from '../lib/api.js';
 import { getIds, track } from '../lib/tracker.js';
+import { WhatsAppIcon, useWhatsApp } from '../components/WhatsAppButton.jsx';
 
 const EMPTY = { name: '', email: '', company: '', subject: '', message: '', website: '' };
 
@@ -97,17 +98,12 @@ export default function ContactView() {
     }
   };
 
-  // Digits only in the profile field; wa.me rejects spaces and a leading plus.
-  const whatsappHref = profile.whatsapp
-    ? `https://wa.me/${String(profile.whatsapp).replace(/\D/g, '')}?text=${encodeURIComponent(
-        `Hi ${profile.firstName || profile.name}, I found your portfolio and wanted to get in touch.`,
-      )}`
-    : null;
+  const whatsappHref = useWhatsApp();
 
   const details = [
     profile.email && { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
     profile.phone && { icon: Phone, label: 'Phone', value: profile.phone, href: `tel:${profile.phoneHref}` },
-    whatsappHref && { icon: MessageCircle, label: 'WhatsApp', value: 'Message me on WhatsApp', href: whatsappHref },
+    whatsappHref && { icon: WhatsAppIcon, label: 'WhatsApp', value: 'Message me on WhatsApp', href: whatsappHref },
     profile.linkedin && { icon: Linkedin, label: 'LinkedIn', value: 'Connect on LinkedIn', href: profile.linkedin },
     profile.location && { icon: MapPin, label: 'Based in', value: profile.location },
   ].filter(Boolean);
@@ -159,7 +155,7 @@ export default function ContactView() {
                 text-[14.5px] font-semibold text-white shadow-card transition-all duration-300
                 ease-apple hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0"
             >
-              <MessageCircle size={17} />
+              <WhatsAppIcon size={18} />
               Chat on WhatsApp
             </a>
           )}

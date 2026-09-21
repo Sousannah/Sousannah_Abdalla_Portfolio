@@ -8,6 +8,7 @@
 
 export const fallbackContent = {
   "profile": {
+    "id": "profile",
     "name": "Sousannah Abdalla",
     "firstName": "Sousannah",
     "title": "AI Engineer",
@@ -25,7 +26,7 @@ export const fallbackContent = {
     "linkedin": "https://www.linkedin.com/in/sousannah-abdalla",
     "github": "https://github.com/sousannah",
     "avatarUrl": "/uploads/memoji-sousannah.png",
-    "resumeUrl": "/Sousannah-Abdalla-AI-Engineer.pdf",
+    "resumeUrl": "/uploads/sousannah-abdalla-cv.pdf",
     "available": true,
     "availabilityNote": "Open to AI engineering and technical lead roles",
     "greeting": "Hey, I'm Sousannah",
@@ -109,11 +110,12 @@ export const fallbackContent = {
       "year": "2025",
       "link": "https://arxiv.org/abs/2505.17303",
       "id": "arXiv:2505.17303"
-    }
+    },
+    "updatedAt": "2026-09-17T16:11:12.000Z"
   },
   "experiences": [
     {
-      "id": 1,
+      "id": "experience-1",
       "company": "Healthplans.AI",
       "role": "AI Engineer & Technical Lead",
       "period": "Sep 2025 — Present",
@@ -136,10 +138,12 @@ export const fallbackContent = {
       ],
       "logoUrl": null,
       "sortOrder": 0,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-17T16:11:12.000Z"
     },
     {
-      "id": 2,
+      "id": "experience-2",
       "company": "Odenta",
       "role": "Founder & Lead Engineer",
       "period": "2025 — Present",
@@ -164,10 +168,12 @@ export const fallbackContent = {
       ],
       "logoUrl": null,
       "sortOrder": 1,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-17T16:11:12.000Z"
     },
     {
-      "id": 3,
+      "id": "experience-3",
       "company": "Maxbit LLC",
       "role": "AI Engineer",
       "period": "Oct 2025 — Jan 2026",
@@ -188,10 +194,12 @@ export const fallbackContent = {
       ],
       "logoUrl": null,
       "sortOrder": 2,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-17T16:11:12.000Z"
     },
     {
-      "id": 4,
+      "id": "experience-4",
       "company": "Alamein International University",
       "role": "Teaching Assistant",
       "period": "Sep 2025 — Present",
@@ -209,10 +217,12 @@ export const fallbackContent = {
       ],
       "logoUrl": null,
       "sortOrder": 3,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-17T16:11:12.000Z"
     },
     {
-      "id": 5,
+      "id": "experience-5",
       "company": "Fiverr",
       "role": "Freelance AI Engineer & Full Stack Developer",
       "period": "Jan 2025 — Present",
@@ -230,10 +240,12 @@ export const fallbackContent = {
       ],
       "logoUrl": null,
       "sortOrder": 4,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-17T16:11:12.000Z"
     },
     {
-      "id": 6,
+      "id": "experience-6",
       "company": "Zudu AI",
       "role": "AI Engineer",
       "period": "Mar 2025 — May 2025",
@@ -251,10 +263,12 @@ export const fallbackContent = {
       ],
       "logoUrl": null,
       "sortOrder": 5,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-17T16:11:12.000Z"
     },
     {
-      "id": 7,
+      "id": "experience-7",
       "company": "Digital Egypt Pioneers Initiative",
       "role": "React Developer Intern",
       "period": "Apr 2024 — Oct 2024",
@@ -272,10 +286,12 @@ export const fallbackContent = {
       ],
       "logoUrl": null,
       "sortOrder": 6,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-17T16:11:12.000Z"
     },
     {
-      "id": 8,
+      "id": "experience-8",
       "company": "University of Louisville",
       "role": "AI Engineer Intern",
       "period": "Sep 2023 — Nov 2023",
@@ -293,10 +309,12 @@ export const fallbackContent = {
       ],
       "logoUrl": null,
       "sortOrder": 7,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-17T16:11:12.000Z"
     },
     {
-      "id": 9,
+      "id": "experience-9",
       "company": "LARRI, University of Louisville",
       "role": "Computer Vision Intern",
       "period": "Jul 2023 — Sep 2023",
@@ -316,12 +334,14 @@ export const fallbackContent = {
       ],
       "logoUrl": null,
       "sortOrder": 8,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-17T16:11:12.000Z"
     }
   ],
   "projects": [
     {
-      "id": 1,
+      "id": "project-1",
       "name": "Odenta",
       "category": "Founder · Product",
       "year": "2025",
@@ -343,7 +363,6 @@ export const fallbackContent = {
       ],
       "accent": "indigo",
       "featured": true,
-      "kind": "shipped",
       "link": "https://www.odenta-eg.com/",
       "linkLabel": "Visit odenta-eg.com",
       "coverUrl": "/uploads/odenta-cover.jpg",
@@ -352,10 +371,12 @@ export const fallbackContent = {
         "/uploads/odenta-shot-2.jpg"
       ],
       "sortOrder": 0,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-21T14:03:15.000Z"
     },
     {
-      "id": 2,
+      "id": "project-2",
       "name": "Claim-Status Voice Agent",
       "category": "Healthcare AI",
       "year": "2025",
@@ -375,7 +396,6 @@ export const fallbackContent = {
       ],
       "accent": "blue",
       "featured": true,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/claim-voice-agent-cover.jpg",
@@ -384,10 +404,12 @@ export const fallbackContent = {
         "/uploads/claim-voice-agent-shot-2.jpg"
       ],
       "sortOrder": 1,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 3,
+      "id": "project-3",
       "name": "Fraud, Waste & Abuse Agents",
       "category": "Applied AI",
       "year": "2025",
@@ -405,7 +427,6 @@ export const fallbackContent = {
       ],
       "accent": "red",
       "featured": false,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/fwa-agents-cover.jpg",
@@ -414,10 +435,12 @@ export const fallbackContent = {
         "/uploads/fwa-agents-shot-2.jpg"
       ],
       "sortOrder": 2,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 4,
+      "id": "project-4",
       "name": "Arabic OCR for Identity Documents",
       "category": "Computer Vision",
       "year": "2025",
@@ -436,7 +459,6 @@ export const fallbackContent = {
       ],
       "accent": "purple",
       "featured": true,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/arabic-ocr-cover.jpg",
@@ -445,10 +467,12 @@ export const fallbackContent = {
         "/uploads/arabic-ocr-shot-2.jpg"
       ],
       "sortOrder": 3,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 5,
+      "id": "project-5",
       "name": "Gesture-Controlled UAV",
       "category": "Research · IEEE",
       "year": "2025",
@@ -467,7 +491,6 @@ export const fallbackContent = {
       ],
       "accent": "teal",
       "featured": true,
-      "kind": "shipped",
       "link": "https://arxiv.org/abs/2505.17303",
       "linkLabel": "Read the paper",
       "coverUrl": "/uploads/gesture-uav-cover.jpg",
@@ -476,10 +499,12 @@ export const fallbackContent = {
         "/uploads/gesture-uav-shot-2.jpg"
       ],
       "sortOrder": 4,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 6,
+      "id": "project-6",
       "name": "Viatryon",
       "category": "Computer Vision",
       "year": "2024",
@@ -497,7 +522,6 @@ export const fallbackContent = {
       ],
       "accent": "orange",
       "featured": false,
-      "kind": "shipped",
       "link": "https://www.viatryon.com/",
       "linkLabel": "Visit the site",
       "coverUrl": "/uploads/viatryon-cover.jpg",
@@ -506,10 +530,12 @@ export const fallbackContent = {
         "/uploads/viatryon-shot-2.jpg"
       ],
       "sortOrder": 5,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 7,
+      "id": "project-7",
       "name": "ASL Learning Platform",
       "category": "Computer Vision",
       "year": "2024",
@@ -527,7 +553,6 @@ export const fallbackContent = {
       ],
       "accent": "green",
       "featured": false,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/asl-platform-cover.jpg",
@@ -536,10 +561,12 @@ export const fallbackContent = {
         "/uploads/asl-platform-shot-2.jpg"
       ],
       "sortOrder": 6,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 8,
+      "id": "project-8",
       "name": "Macular Degeneration Detection",
       "category": "Medical AI",
       "year": "2023",
@@ -557,7 +584,6 @@ export const fallbackContent = {
       ],
       "accent": "pink",
       "featured": false,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/macular-ai-cover.jpg",
@@ -566,10 +592,12 @@ export const fallbackContent = {
         "/uploads/macular-ai-shot-2.jpg"
       ],
       "sortOrder": 7,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-17T16:11:12.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 11,
+      "id": "project-11",
       "name": "Fakturama Image-to-Cash",
       "category": "Applied AI · Automation",
       "year": "2026",
@@ -590,7 +618,6 @@ export const fallbackContent = {
       ],
       "accent": "blue",
       "featured": true,
-      "kind": "shipped",
       "link": "https://github.com/Sousannah/fakturama-image-to-cash",
       "linkLabel": "View on GitHub",
       "coverUrl": "/uploads/fakturama-cover.jpg",
@@ -599,10 +626,12 @@ export const fallbackContent = {
         "/uploads/fakturama-shot-2.jpg"
       ],
       "sortOrder": 8,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 12,
+      "id": "project-12",
       "name": "VoiceAuth Pro",
       "category": "Applied AI · Security",
       "year": "2026",
@@ -624,7 +653,6 @@ export const fallbackContent = {
       ],
       "accent": "indigo",
       "featured": true,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/voiceauth-pro-cover.jpg",
@@ -633,10 +661,12 @@ export const fallbackContent = {
         "/uploads/voiceauth-pro-shot-2.jpg"
       ],
       "sortOrder": 9,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 13,
+      "id": "project-13",
       "name": "HunyuanOCR Arabic Studio",
       "category": "Computer Vision",
       "year": "2026",
@@ -658,7 +688,6 @@ export const fallbackContent = {
       ],
       "accent": "purple",
       "featured": true,
-      "kind": "shipped",
       "link": "https://github.com/Sousannah/HuayunOCR-Arabic",
       "linkLabel": "View on GitHub",
       "coverUrl": "/uploads/hunyuan-ocr-arabic-cover.jpg",
@@ -671,10 +700,12 @@ export const fallbackContent = {
         "/uploads/hunyuan-ocr-arabic-ui-6.jpg"
       ],
       "sortOrder": 10,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 14,
+      "id": "project-14",
       "name": "Facial Emotion Recognition",
       "category": "Computer Vision",
       "year": "2026",
@@ -696,7 +727,6 @@ export const fallbackContent = {
       ],
       "accent": "pink",
       "featured": false,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/emotion-recognition-cover.jpg",
@@ -705,10 +735,12 @@ export const fallbackContent = {
         "/uploads/emotion-recognition-shot-2.jpg"
       ],
       "sortOrder": 11,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 15,
+      "id": "project-15",
       "name": "ForsaHunt",
       "category": "Full Stack · NLP",
       "year": "2025",
@@ -729,7 +761,6 @@ export const fallbackContent = {
       ],
       "accent": "orange",
       "featured": false,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/forsahunt-cover.jpg",
@@ -738,10 +769,12 @@ export const fallbackContent = {
         "/uploads/forsahunt-shot-2.jpg"
       ],
       "sortOrder": 12,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 16,
+      "id": "project-16",
       "name": "WattWhere",
       "category": "Full Stack",
       "year": "2025",
@@ -763,7 +796,6 @@ export const fallbackContent = {
       ],
       "accent": "green",
       "featured": false,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/wattwhere-cover.jpg",
@@ -772,10 +804,12 @@ export const fallbackContent = {
         "/uploads/wattwhere-shot-2.jpg"
       ],
       "sortOrder": 13,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 17,
+      "id": "project-17",
       "name": "DGX Cluster Dashboard",
       "category": "ML Infrastructure",
       "year": "2026",
@@ -795,7 +829,6 @@ export const fallbackContent = {
       ],
       "accent": "teal",
       "featured": false,
-      "kind": "shipped",
       "link": null,
       "linkLabel": null,
       "coverUrl": "/uploads/dgx-dashboard-cover.jpg",
@@ -804,10 +837,12 @@ export const fallbackContent = {
         "/uploads/dgx-dashboard-shot-2.jpg"
       ],
       "sortOrder": 14,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 18,
+      "id": "project-18",
       "name": "AI Trading Platform",
       "category": "Applied AI",
       "year": "2025",
@@ -828,7 +863,6 @@ export const fallbackContent = {
       ],
       "accent": "green",
       "featured": false,
-      "kind": "shipped",
       "link": "https://github.com/Sousannah/AI-Trading-Platform",
       "linkLabel": "View on GitHub",
       "coverUrl": "/uploads/ai-trading-cover.jpg",
@@ -837,10 +871,12 @@ export const fallbackContent = {
         "/uploads/ai-trading-shot-2.jpg"
       ],
       "sortOrder": 15,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 19,
+      "id": "project-19",
       "name": "MediaPipe Hand Tracking",
       "category": "Open Source",
       "year": "2024",
@@ -858,7 +894,6 @@ export const fallbackContent = {
       ],
       "accent": "teal",
       "featured": false,
-      "kind": "shipped",
       "link": "https://github.com/Sousannah/hand-tracking-using-mediapipe",
       "linkLabel": "View on GitHub",
       "coverUrl": "/uploads/hand-tracking-cover.jpg",
@@ -867,10 +902,12 @@ export const fallbackContent = {
         "/uploads/hand-tracking-shot-2.jpg"
       ],
       "sortOrder": 16,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 20,
+      "id": "project-20",
       "name": "YOLOv8 Toolkit",
       "category": "Open Source",
       "year": "2024",
@@ -888,7 +925,6 @@ export const fallbackContent = {
       ],
       "accent": "yellow",
       "featured": false,
-      "kind": "shipped",
       "link": "https://github.com/Sousannah/YOLOv8-Projects",
       "linkLabel": "View on GitHub",
       "coverUrl": "/uploads/yolov8-toolkit-cover.jpg",
@@ -897,10 +933,12 @@ export const fallbackContent = {
         "/uploads/yolov8-toolkit-shot-2.jpg"
       ],
       "sortOrder": 17,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     },
     {
-      "id": 21,
+      "id": "project-21",
       "name": "Fridge Fusion",
       "category": "Full Stack",
       "year": "2025",
@@ -920,7 +958,6 @@ export const fallbackContent = {
       ],
       "accent": "orange",
       "featured": false,
-      "kind": "shipped",
       "link": "https://github.com/Sousannah/Fridge-Fusion",
       "linkLabel": "View on GitHub",
       "coverUrl": "/uploads/fridge-fusion-cover.jpg",
@@ -929,209 +966,14 @@ export const fallbackContent = {
         "/uploads/fridge-fusion-shot-2.jpg"
       ],
       "sortOrder": 18,
-      "published": true
-    },
-    {
-      "id": 22,
-      "name": "Ask Your Documents",
-      "category": "Concept · Applied AI",
-      "year": "2026",
-      "tagline": "A private assistant that answers from your own files, with citations.",
-      "description": "Your contracts, policies, wikis and tickets become something a person can just ask. Every answer links to the passage it came from, conflicting versions get flagged rather than averaged, permissions are checked per user, and a question outside the corpus is refused instead of guessed at. Two to three weeks to a working pilot on your real documents.",
-      "outcomes": [
-        "Every claim cited back to the source passage",
-        "Refuses to answer outside the corpus, so nothing is invented",
-        "Connects to SharePoint, Drive, Confluence, Zendesk or a plain folder"
-      ],
-      "stack": [
-        "Python",
-        "LLM Orchestration",
-        "RAG",
-        "Vector Search",
-        "FastAPI",
-        "React"
-      ],
-      "accent": "blue",
-      "featured": false,
-      "kind": "concept",
-      "link": null,
-      "linkLabel": null,
-      "coverUrl": "/uploads/rag-assistant-cover.jpg",
-      "gallery": [
-        "/uploads/rag-assistant-shot-1.jpg",
-        "/uploads/rag-assistant-shot-2.jpg"
-      ],
-      "sortOrder": 19,
-      "published": true
-    },
-    {
-      "id": 23,
-      "name": "AI Receptionist",
-      "category": "Concept · Voice AI",
-      "year": "2026",
-      "tagline": "Answers every call, books into your real calendar, never sleeps.",
-      "description": "A voice agent for clinics, salons and workshops: it answers, checks live availability, books, reschedules, cancels and sends the confirmation — and hands over to a person the moment the question stops being a booking. The same architecture as the healthcare claim agent I run in production, pointed at a calendar instead of a claims system.",
-      "outcomes": [
-        "No missed calls, including evenings and weekends",
-        "Writes into the calendar you already use",
-        "Hands over to a human on anything outside the script"
-      ],
-      "stack": [
-        "STT",
-        "TTS",
-        "LLM Orchestration",
-        "Twilio",
-        "Calendar APIs",
-        "Node.js"
-      ],
-      "accent": "indigo",
-      "featured": false,
-      "kind": "concept",
-      "link": null,
-      "linkLabel": null,
-      "coverUrl": "/uploads/ai-receptionist-cover.jpg",
-      "gallery": [
-        "/uploads/ai-receptionist-shot-1.jpg",
-        "/uploads/ai-receptionist-shot-2.jpg"
-      ],
-      "sortOrder": 20,
-      "published": true
-    },
-    {
-      "id": 24,
-      "name": "Invoice & Receipt Automation",
-      "category": "Concept · Document AI",
-      "year": "2026",
-      "tagline": "Photograph the paperwork; it lands in your accounting system.",
-      "description": "Invoices and receipts arrive as PDFs, scans or phone photos and come out as posted entries. Totals are recomputed rather than trusted, so a document whose own arithmetic is wrong stops for a human instead of quietly entering the ledger. Anything ambiguous — a new supplier, an odd VAT rate — is queued for review with the reason stated. Built on the pipeline behind Fakturama Image-to-Cash.",
-      "outcomes": [
-        "Roughly four in five documents posted without anyone touching them",
-        "Arithmetic verified before anything is written",
-        "Exports to Xero, QuickBooks, DATEV or a plain CSV"
-      ],
-      "stack": [
-        "Python",
-        "OCR",
-        "LLM Extraction",
-        "Decimal Verification",
-        "FastAPI",
-        "React"
-      ],
-      "accent": "teal",
-      "featured": false,
-      "kind": "concept",
-      "link": null,
-      "linkLabel": null,
-      "coverUrl": "/uploads/invoice-automation-cover.jpg",
-      "gallery": [
-        "/uploads/invoice-automation-shot-1.jpg",
-        "/uploads/invoice-automation-shot-2.jpg"
-      ],
-      "sortOrder": 21,
-      "published": true
-    },
-    {
-      "id": 25,
-      "name": "Arabic Support Agent",
-      "category": "Concept · NLP",
-      "year": "2026",
-      "tagline": "WhatsApp support that actually understands Egyptian Arabic.",
-      "description": "Most support bots fail in this region for one reason: they were trained on Modern Standard Arabic and customers write in dialect. This one handles Egyptian and Gulf Arabic, looks up the real order, applies your business rules, takes the action, and escalates the moment sentiment turns or the request exceeds what it is allowed to approve. Arabic-native, on WhatsApp where your customers already are.",
-      "outcomes": [
-        "Dialect, not just Modern Standard Arabic",
-        "Takes real actions — lookups, address changes, refunds within a limit",
-        "Escalates on anger, ambiguity, or an explicit request for a human"
-      ],
-      "stack": [
-        "LLM Orchestration",
-        "Arabic NLP",
-        "WhatsApp Business API",
-        "Python",
-        "Function Calling"
-      ],
-      "accent": "green",
-      "featured": false,
-      "kind": "concept",
-      "link": null,
-      "linkLabel": null,
-      "coverUrl": "/uploads/arabic-support-bot-cover.jpg",
-      "gallery": [
-        "/uploads/arabic-support-bot-shot-1.jpg",
-        "/uploads/arabic-support-bot-shot-2.jpg"
-      ],
-      "sortOrder": 22,
-      "published": true
-    },
-    {
-      "id": 26,
-      "name": "Visual Quality Inspection",
-      "category": "Concept · Computer Vision",
-      "year": "2026",
-      "tagline": "A camera over the line that catches what tired eyes miss.",
-      "description": "A camera above the conveyor, a small detector at the edge, and a verdict before the part reaches the next station. Defects are classified by type rather than just flagged, so the dashboard points at the tooling that caused them. Runs on-premise with no cloud round-trip, which is what keeps it inside the cycle time. The YOLO work behind it is already on my GitHub.",
-      "outcomes": [
-        "Per-part verdict inside the line cycle time",
-        "Defects classified by type, so the cause is traceable",
-        "Runs on-premise — no images leave the factory"
-      ],
-      "stack": [
-        "YOLOv8",
-        "PyTorch",
-        "OpenCV",
-        "Edge Inference",
-        "FastAPI",
-        "React"
-      ],
-      "accent": "red",
-      "featured": false,
-      "kind": "concept",
-      "link": null,
-      "linkLabel": null,
-      "coverUrl": "/uploads/visual-inspection-cover.jpg",
-      "gallery": [
-        "/uploads/visual-inspection-shot-1.jpg",
-        "/uploads/visual-inspection-shot-2.jpg"
-      ],
-      "sortOrder": 23,
-      "published": true
-    },
-    {
-      "id": 27,
-      "name": "CV Screening & Matching",
-      "category": "Concept · NLP",
-      "year": "2026",
-      "tagline": "Rank 300 applicants in a minute, and show your working.",
-      "description": "Semantic matching between a role and a pile of CVs, scored on skills, depth and domain rather than keyword overlap — so the right candidate still surfaces when they wrote \"speech recognition\" and you wrote \"ASR\". Every score opens into the lines of the CV that produced it, no demographic signal is used, and the same CV always scores the same. The matching engine is the one behind ForsaHunt, pointed at people instead of tenders.",
-      "outcomes": [
-        "Semantic matching, so different vocabulary still matches",
-        "Every score traceable to quoted lines of the CV",
-        "Deterministic and auditable, with no demographic features"
-      ],
-      "stack": [
-        "Python",
-        "spaCy",
-        "Sentence Transformers",
-        "scikit-learn",
-        "FastAPI",
-        "React"
-      ],
-      "accent": "purple",
-      "featured": false,
-      "kind": "concept",
-      "link": null,
-      "linkLabel": null,
-      "coverUrl": "/uploads/cv-matching-cover.jpg",
-      "gallery": [
-        "/uploads/cv-matching-shot-1.jpg",
-        "/uploads/cv-matching-shot-2.jpg"
-      ],
-      "sortOrder": 24,
-      "published": true
+      "published": true,
+      "createdAt": "2026-09-21T13:29:58.000Z",
+      "updatedAt": "2026-09-21T13:29:58.000Z"
     }
   ],
   "skillGroups": [
     {
-      "id": 1,
+      "id": "skills-1",
       "name": "AI & Machine Learning",
       "icon": "brain",
       "accent": "blue",
@@ -1159,7 +1001,7 @@ export const fallbackContent = {
       "published": true
     },
     {
-      "id": 2,
+      "id": "skills-2",
       "name": "Voice AI & Computer Vision",
       "icon": "mic",
       "accent": "purple",
@@ -1182,7 +1024,7 @@ export const fallbackContent = {
       "published": true
     },
     {
-      "id": 3,
+      "id": "skills-3",
       "name": "Full Stack & Mobile",
       "icon": "layers",
       "accent": "indigo",
@@ -1208,7 +1050,7 @@ export const fallbackContent = {
       "published": true
     },
     {
-      "id": 4,
+      "id": "skills-4",
       "name": "Cloud & Engineering",
       "icon": "cloud",
       "accent": "teal",
