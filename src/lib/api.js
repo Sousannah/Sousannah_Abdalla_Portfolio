@@ -27,7 +27,8 @@ function resolveBase() {
   return PRODUCTION_API;
 }
 
-const BASE = resolveBase();
+/** The resolved API origin. Exported so the tracker cannot drift from it. */
+export const BASE = resolveBase();
 
 export class ApiError extends Error {
   constructor(message, status, fields) {

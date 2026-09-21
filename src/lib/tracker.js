@@ -7,6 +7,7 @@
  * their details into the contact form or the resume gate, at which point
  * `identify()` links the name and email to everything already recorded.
  */
+import { BASE } from './api.js';
 
 const STORAGE_VISITOR = 'pf_visitor_id';
 const STORAGE_SESSION = 'pf_session_id';
@@ -63,7 +64,10 @@ function clientContext() {
 
 /* -- network --------------------------------------------------------------- */
 
-const BASE = import.meta.env.VITE_API_URL || '';
+// Shared with api.js rather than read from the environment again. When these
+// were two separate constants, a build without VITE_API_URL sent every event to
+// the site's own domain instead of the API — silently, because the beacon's
+// response is never checked. Analytics simply stayed empty.
 
 async function send(events, { beacon = false } = {}) {
   const payload = JSON.stringify({
