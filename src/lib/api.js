@@ -2,7 +2,32 @@
  * Thin fetch wrapper. In development Vite proxies /api to the backend, so the
  * browser stays on one origin and the auth cookie works without extra config.
  */
-const BASE = import.meta.env.VITE_API_URL || '';
+
+/**
+ * Where the API lives when nothing says otherwise.
+ *
+ * `VITE_API_URL` is read at build time, so a deployment whose build did not see
+ * it produces a bundle that calls /api on its own domain, 404s, and silently
+ * renders the offline snapshot — text appears, every image breaks, and it looks
+ * like a styling bug. Falling back to the real API at runtime means a build with
+ * a missing variable still works.
+ */
+const PRODUCTION_API = 'https://sousannahabdallaportfoliobackend-production.up.railway.app';
+
+const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]', '']);
+
+function resolveBase() {
+  const configured = import.meta.env.VITE_API_URL?.trim();
+  if (configured) return configured.replace(/\/+$/, '');
+
+  // Served from a dev machine: Vite proxies /api and /uploads, so same-origin
+  // is not just fine, it is what keeps the auth cookie first-party.
+  if (typeof window !== 'undefined' && LOCAL_HOSTS.has(window.location.hostname)) return '';
+
+  return PRODUCTION_API;
+}
+
+const BASE = resolveBase();
 
 export class ApiError extends Error {
   constructor(message, status, fields) {
