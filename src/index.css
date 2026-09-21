@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    /* Matches the height of the fixed chrome, used by scroll-margin below. */
+    --nav-h: 48px;
+  }
+
+  .dark:root {
+    color-scheme: dark;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+    @apply dark:bg-night dark:text-white;
+    /* Safe areas keep content clear of the notch and home indicator. */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Anchors land below the fixed navigation bar. */
+  section[id] {
+    scroll-margin-top: calc(var(--nav-h) + 16px);
+  }
+
+  ::selection {
+    @apply bg-accent/20 dark:bg-accent/30;
+  }
+
+  /* A slim scrollbar, close to the macOS overlay style. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-black/15 dark:bg-white/15;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-black/25 dark:bg-white/25;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-surface dark:ring-offset-night;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* The frosted bar Apple puts at the top of every page. */
+  .chrome-blur {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+  .dark .chrome-blur {
+    background: rgba(22, 22, 23, 0.72);
+  }
+
+  .glass-card {
+    @apply rounded-card border border-black/[.06] bg-white/70 backdrop-blur-xl;
+    @apply dark:border-white/[.08] dark:bg-white/[.04];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill bg-accent px-6 py-3 text-[15px]
+           font-medium text-white transition-all duration-300 ease-apple
+           hover:bg-accent-hover hover:scale-[1.02] active:scale-[.98]
+           disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill border border-black/10
+           px-6 py-3 text-[15px] font-medium text-ink transition-all duration-300 ease-apple
+           hover:border-black/20 hover:bg-black/[.03] hover:scale-[1.02] active:scale-[.98]
+           dark:border-white/15 dark:text-white dark:hover:border-white/30 dark:hover:bg-white/[.06];
+  }
+
+  .field {
+    @apply w-full rounded-apple border border-black/10 bg-black/[.02] px-4 py-3.5 text-[15px]
+           text-ink placeholder:text-ink-faint transition-all duration-200
+           focus:border-accent focus:bg-white focus:outline-none focus:ring-4 focus:ring-accent/10
+           dark:border-white/10 dark:bg-white/[.04] dark:text-white dark:placeholder:text-white/40
+           dark:focus:border-accent dark:focus:bg-white/[.06];
+  }
+
+  .eyebrow {
+    @apply text-eyebrow uppercase text-accent;
+  }
+
+  /* Text that fades from solid to muted, as used on Apple product headlines. */
+  .gradient-text {
+    @apply bg-gradient-to-br from-ink via-ink to-ink-muted bg-clip-text text-transparent
+           dark:from-white dark:via-white dark:to-white/50;
+  }
+
+  .hairline {
+    @apply border-black/[.08] dark:border-white/[.10];
+  }
+
+  /* Scroll reveal.
+
+     Content is visible by default and only hides itself once `motion-ok` is on
+     the root — a class main.jsx adds after the browser paints its first frame
+     promptly. If the page loads somewhere that never paints (a background tab,
+     power saving, a screenshot of an occluded window), the class is never added
+     and every section simply renders, rather than sitting at zero opacity
+     waiting for an animation that will not run. Nothing here gates content on
+     JavaScript succeeding. */
+  .reveal {
+    transition:
+      opacity 0.7s cubic-bezier(0.28, 0.11, 0.32, 1),
+      transform 0.7s cubic-bezier(0.28, 0.11, 0.32, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .motion-ok .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .motion-ok .reveal-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motion-ok .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .shell {
+    @apply mx-auto w-full max-w-[1120px] px-5 md:px-8;
+  }
+}
